@@ -8,7 +8,7 @@ public class HandAnimatorController : MonoBehaviour
     [SerializeField] private InputActionProperty triggerAction;
     [SerializeField] private InputActionProperty gripAction;
 
-    private Animator anim
+    private Animator anim;
 
     private void Start()
     {
