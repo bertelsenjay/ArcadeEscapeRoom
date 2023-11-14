@@ -10,6 +10,11 @@ public class HandAnimatorController : MonoBehaviour
 
     private Animator anim;
 
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     private void Update()
     {
         float triggerValue = triggerAction.action.ReadValue<float>();
