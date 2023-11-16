@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/JacobSandbox.unity
-    guid: 15fc95ae117cd414bb6a2ac70d2a98ca
-  - enabled: 1
     path: Assets/Scenes/TestScene.unity
     guid: e94411c640cf6ac41b97a76a16a6d129
+  - enabled: 1
+    path: Assets/Scenes/JacobSandbox.unity
+    guid: 15fc95ae117cd414bb6a2ac70d2a98ca
   - enabled: 1
     path: Assets/Scenes/DifficultySelect.unity
     guid: 6fef3188631fc1549be6c582c48dd277
