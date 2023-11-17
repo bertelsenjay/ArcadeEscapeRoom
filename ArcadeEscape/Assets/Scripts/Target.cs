@@ -6,11 +6,14 @@ public class Target : MonoBehaviour
 {
     MeshRenderer meshRenderer;
     BoxCollider boxCollider;
-    public float delay = 5f; 
+    public float lowestDelay = 5f;
+    public float highestDelay = 10f; 
+    float randomDelay = 5f;
     private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
         boxCollider = GetComponent<BoxCollider>();
+        randomDelay = Random.Range(lowestDelay, highestDelay);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -25,7 +28,8 @@ public class Target : MonoBehaviour
 
     private IEnumerator ResetCollision()
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(randomDelay);
+        randomDelay = Random.Range(lowestDelay, highestDelay);
         meshRenderer.enabled = true;
         boxCollider.enabled = true; 
     }
