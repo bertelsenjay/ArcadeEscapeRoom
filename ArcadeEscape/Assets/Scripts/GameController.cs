@@ -11,11 +11,14 @@ public class GameController : MonoBehaviour
     public GameObject moleContainer;
     private Mole[] moles;
     public float showMoleTimer = 1.5f;
+    public static int score = 0;
+    public TextMeshProUGUI scoreText; 
     // Start is called before the first frame update
     void Start()
     {
         moles = moleContainer.GetComponentsInChildren<Mole>();
         Debug.Log(moles.Length);
+        score = 0;
     }
 
     // Update is called once per frame
@@ -37,5 +40,7 @@ public class GameController : MonoBehaviour
         {
             timerText.text = "Score: ";
         }
+
+        scoreText.text = "Score: " + score; 
     }
 }

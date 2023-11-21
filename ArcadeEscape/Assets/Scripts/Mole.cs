@@ -10,6 +10,7 @@ public class Mole : MonoBehaviour
     public float speed = 4f;
     public float hideMoleTimer = 1.5f;
     public float timerLength = 1.5f;
+    CapsuleCollider capsuleCollider;
     // Start is called before the first frame update
 
     void Awake()
@@ -17,6 +18,7 @@ public class Mole : MonoBehaviour
         HideMole();
 
         transform.localPosition = newPosition;
+        capsuleCollider = GetComponent<CapsuleCollider>();
     }
     void Start()
     {
@@ -55,6 +57,7 @@ public class Mole : MonoBehaviour
             );
 
         hideMoleTimer = timerLength; 
+        capsuleCollider.enabled = true;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -63,6 +66,8 @@ public class Mole : MonoBehaviour
         {
             //Destroy(gameObject);
             HideMole();
+            GameController.score++;
+            capsuleCollider.enabled = false;
         }
     }
 }
