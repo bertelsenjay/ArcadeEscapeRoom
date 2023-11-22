@@ -6,11 +6,13 @@ public class FireBullet : MonoBehaviour
 {
     public GameObject bullet;
     public Transform spawnPoint;
-    public float fireSpeed = 20f; 
-
+    public float fireSpeed = 20f;
+    public AudioClip shootSound;
+    AudioSource audioSource; 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
         grabbable.activated.AddListener(SpawnBullet);
     }
@@ -24,6 +26,7 @@ public class FireBullet : MonoBehaviour
     public void SpawnBullet(ActivateEventArgs arg)
     {
         GameObject spawnedBullet = Instantiate(bullet);
+        audioSource.PlayOneShot(shootSound, 0.25f);
         spawnedBullet.transform.position = spawnPoint.position;
         spawnedBullet.GetComponent<Rigidbody>().velocity = spawnPoint.forward * fireSpeed;
         Destroy(spawnedBullet, 5);

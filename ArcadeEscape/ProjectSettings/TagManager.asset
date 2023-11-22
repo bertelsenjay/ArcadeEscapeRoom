@@ -8,6 +8,7 @@ TagManager:
   - Target
   - Bullet
   - Hammer
+  - Mole
   layers:
   - Default
   - TransparentFX

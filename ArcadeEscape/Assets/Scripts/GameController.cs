@@ -7,12 +7,13 @@ public class GameController : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
     public float gameTimer = 30f;
-
+    public float initialTimer = 0f; 
     public GameObject moleContainer;
     private Mole[] moles;
     public float showMoleTimer = 1.5f;
     public static int score = 0;
-    public TextMeshProUGUI scoreText; 
+    public TextMeshProUGUI scoreText;
+    public static bool isPlaying = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +25,10 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameTimer -= Time.deltaTime;
+        
         if (gameTimer > 0f)
         {
+            gameTimer -= Time.deltaTime;
             timerText.text = "Time: " + Mathf.Floor(gameTimer);
             showMoleTimer -= Time.deltaTime;
             if (showMoleTimer < 0f)
@@ -38,9 +40,16 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            timerText.text = "Score: ";
+            timerText.text = "Hit button with hammer to start ";
+
         }
 
         scoreText.text = "Score: " + score; 
+    }
+
+    public void StartGame()
+    {
+        gameTimer = initialTimer;
+        score = 0;
     }
 }
