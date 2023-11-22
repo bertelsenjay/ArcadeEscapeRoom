@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
     public float showMoleTimer = 1.5f;
     public static int score = 0;
     public TextMeshProUGUI scoreText;
-    public static bool isPlaying = false;
+    //public static bool isPlaying = false;
     // Start is called before the first frame update
     void Start()
     {
