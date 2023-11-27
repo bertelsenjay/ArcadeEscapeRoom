@@ -66,7 +66,7 @@ public class Mole : MonoBehaviour
         {
             //Destroy(gameObject);
             HideMole();
-            GameController.score++;
+            GameController.score += 2;
             capsuleCollider.enabled = false;
         }
     }

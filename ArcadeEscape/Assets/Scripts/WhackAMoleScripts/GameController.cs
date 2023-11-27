@@ -56,8 +56,12 @@ public class GameController : MonoBehaviour
 
     public void StartGame()
     {
-        once = false;
-        gameTimer = initialTimer;
-        score = 0;
+        if (gameTimer <= 0f)
+        {
+            once = false;
+            gameTimer = initialTimer;
+            score = 0;
+        }
+        
     }
 }
