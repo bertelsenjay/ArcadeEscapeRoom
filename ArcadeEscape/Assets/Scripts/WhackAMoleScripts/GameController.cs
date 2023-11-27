@@ -13,10 +13,13 @@ public class GameController : MonoBehaviour
     public float showMoleTimer = 1.5f;
     public static int score = 0;
     public TextMeshProUGUI scoreText;
+    TicketManager ticketManager;
+    private bool once = false; 
     //public static bool isPlaying = false;
     // Start is called before the first frame update
     void Start()
     {
+        ticketManager = FindObjectOfType<TicketManager>();
         moles = moleContainer.GetComponentsInChildren<Mole>();
         Debug.Log(moles.Length);
         score = 0;
@@ -41,7 +44,11 @@ public class GameController : MonoBehaviour
         else
         {
             timerText.text = "Hit button with hammer to start ";
-
+            if (once == false)
+            {
+                once = true;
+                ticketManager.EarnTickets(Mathf.RoundToInt(score / 2));
+            }
         }
 
         scoreText.text = "Score: " + score; 
@@ -49,6 +56,7 @@ public class GameController : MonoBehaviour
 
     public void StartGame()
     {
+        once = false;
         gameTimer = initialTimer;
         score = 0;
     }

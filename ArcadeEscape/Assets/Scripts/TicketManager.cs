@@ -25,4 +25,6 @@ public class TicketManager : MonoBehaviour
     {
         tickets += ticketCount; 
     }
+
+
 }
