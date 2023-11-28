@@ -6,13 +6,14 @@ using TMPro;
 public class TicketManager : MonoBehaviour
 {
 
-    public int tickets = 0;
+    public static int tickets = 0;
+    public int initialTickets = 50; 
     public TextMeshProUGUI ticketText; 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        tickets = initialTickets;
     }
 
     // Update is called once per frame

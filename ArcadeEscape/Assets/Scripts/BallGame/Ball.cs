@@ -15,9 +15,13 @@ public class Ball : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "BallScoring")
+        if (other.gameObject.tag == "BallScoring" && !BallGameManager.tenSecondsLeft && BallGameButton.isPlaying)
         {
             gameManager.AddScore(2);
+        }
+        else if (other.gameObject.tag == "BallScoring" &&  BallGameManager.tenSecondsLeft && BallGameButton.isPlaying)
+        {
+            gameManager.AddScore(3);
         }
     }
 }

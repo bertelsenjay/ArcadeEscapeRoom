@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class DifficultySelect : MonoBehaviour
 {
     public static bool isEasy = false;
-    public static bool isNormal = false;
+    public static bool isNormal = true;
     public static bool isHard = false; 
 
     // Start is called before the first frame update
