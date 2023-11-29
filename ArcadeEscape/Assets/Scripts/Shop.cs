@@ -17,6 +17,7 @@ public class Shop : MonoBehaviour
     private bool hasCrowBarBeenBought = false;
     private bool hasSection2BeenBought = false; 
     LockManager lockManager;
+    public GameObject section2Divider; 
 
     private void Awake()
     {
@@ -80,6 +81,7 @@ public class Shop : MonoBehaviour
                 {
                     TicketManager.tickets -= ticketsNeeded;
                     hasSection2BeenBought = true;
+                    Destroy(section2Divider);
                     //Unlock Section 2
                 }
             }
