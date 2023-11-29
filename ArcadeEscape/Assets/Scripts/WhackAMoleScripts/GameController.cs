@@ -11,6 +11,9 @@ public class GameController : MonoBehaviour
     public GameObject moleContainer;
     private Mole[] moles;
     public float showMoleTimer = 1.5f;
+    public float easyMoleTimer = 1.5f; 
+    public float normalMoleTimer = 1.25f;
+    public float hardMoleTimer = 1f; 
     public static int score = 0;
     public TextMeshProUGUI scoreText;
     TicketManager ticketManager;
@@ -23,6 +26,19 @@ public class GameController : MonoBehaviour
         moles = moleContainer.GetComponentsInChildren<Mole>();
         Debug.Log(moles.Length);
         score = 0;
+        if (DifficultySelect.isEasy)
+        {
+            showMoleTimer = easyMoleTimer;
+        }
+        if (DifficultySelect.isNormal)
+        {
+            showMoleTimer = normalMoleTimer;
+        }
+        if (DifficultySelect.isHard)
+        {
+            showMoleTimer = hardMoleTimer; 
+        }
+
     }
 
     // Update is called once per frame
@@ -38,7 +54,18 @@ public class GameController : MonoBehaviour
             {
                 moles[Random.Range(0, moles.Length)].ShowMole();
 
-                showMoleTimer = 1.5f;
+                if (DifficultySelect.isEasy)
+                {
+                    showMoleTimer = easyMoleTimer;
+                }
+                if (DifficultySelect.isNormal)
+                {
+                    showMoleTimer = normalMoleTimer;
+                }
+                if (DifficultySelect.isHard)
+                {
+                    showMoleTimer = hardMoleTimer;
+                }
             }
         }
         else

@@ -38,4 +38,9 @@ public class LockManager : MonoBehaviour
     {
         locksLeft--;
     }
+
+    public int GetLocksLeft()
+    {
+        return locksLeft;
+    }
 }
