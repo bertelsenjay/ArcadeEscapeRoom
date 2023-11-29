@@ -42,7 +42,11 @@ public class ShootingManager : MonoBehaviour
 
     public void AddScore(int amount)
     {
-        score += amount;
+        if (gameTimer > 0f)
+        {
+            score += amount;
+
+        }
     }
 
     public void StartGame()
