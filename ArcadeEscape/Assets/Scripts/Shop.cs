@@ -52,7 +52,7 @@ public class Shop : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "PlayerHand")
         {
@@ -84,6 +84,46 @@ public class Shop : MonoBehaviour
                     Destroy(section2Divider);
                     //Unlock Section 2
                 }
+            }
+        }
+    }*/
+
+    public void PurchaseUnlock()
+    {
+        if (!hasUnlockBeenBought)
+        {
+            if (TicketManager.tickets >= ticketsNeeded)
+            {
+                TicketManager.tickets -= ticketsNeeded;
+                lockManager.UnlockLock(); 
+                hasUnlockBeenBought = true;
+            }
+        }
+
+    }
+
+    public void PurchaseCrowBar()
+    {
+        if (!hasCrowBarBeenBought)
+        {
+            if (TicketManager.tickets >= ticketsNeeded)
+            {
+                TicketManager.tickets -= ticketsNeeded;
+                hasCrowBarBeenBought = true;
+                //Spawn Crowbar
+            }
+        }
+
+    }
+    public void PurchaseSectionTwo()
+    {
+        if (!hasSection2BeenBought)
+        {
+            if (TicketManager.tickets > ticketsNeeded)
+            {
+                TicketManager.tickets -= ticketsNeeded;
+                hasSection2BeenBought = true;
+                Destroy(section2Divider);
             }
         }
     }

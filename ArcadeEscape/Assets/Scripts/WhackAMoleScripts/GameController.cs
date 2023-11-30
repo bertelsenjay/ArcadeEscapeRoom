@@ -7,10 +7,15 @@ public class GameController : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
     public float gameTimer = 30f;
-    public float initialTimer = 0f; 
+    public float easyInitialTimer = 40f;
+    public float normalInitialTimer = 30f;
+    public float hardInitialTimer = 25f; 
     public GameObject moleContainer;
     private Mole[] moles;
     public float showMoleTimer = 1.5f;
+    public float easyMoleTimer = 1.5f; 
+    public float normalMoleTimer = 1.25f;
+    public float hardMoleTimer = 1f; 
     public static int score = 0;
     public TextMeshProUGUI scoreText;
     TicketManager ticketManager;
@@ -23,6 +28,19 @@ public class GameController : MonoBehaviour
         moles = moleContainer.GetComponentsInChildren<Mole>();
         Debug.Log(moles.Length);
         score = 0;
+        if (DifficultySelect.isEasy)
+        {
+            showMoleTimer = easyMoleTimer;
+        }
+        if (DifficultySelect.isNormal)
+        {
+            showMoleTimer = normalMoleTimer;
+        }
+        if (DifficultySelect.isHard)
+        {
+            showMoleTimer = hardMoleTimer; 
+        }
+
     }
 
     // Update is called once per frame
@@ -38,7 +56,18 @@ public class GameController : MonoBehaviour
             {
                 moles[Random.Range(0, moles.Length)].ShowMole();
 
-                showMoleTimer = 1.5f;
+                if (DifficultySelect.isEasy)
+                {
+                    showMoleTimer = easyMoleTimer;
+                }
+                if (DifficultySelect.isNormal)
+                {
+                    showMoleTimer = normalMoleTimer;
+                }
+                if (DifficultySelect.isHard)
+                {
+                    showMoleTimer = hardMoleTimer;
+                }
             }
         }
         else
@@ -58,9 +87,25 @@ public class GameController : MonoBehaviour
     {
         if (gameTimer <= 0f)
         {
-            once = false;
-            gameTimer = initialTimer;
-            score = 0;
+
+            if (DifficultySelect.isEasy)
+            {
+                once = false;
+                gameTimer = easyInitialTimer;
+                score = 0;
+            }
+            if (DifficultySelect.isNormal)
+            {
+                once = false;
+                gameTimer = normalInitialTimer;
+                score = 0;
+            }
+            if (DifficultySelect.isHard)
+            {
+                once = false;
+                gameTimer = hardInitialTimer;
+                score = 0;
+            }
         }
         
     }
