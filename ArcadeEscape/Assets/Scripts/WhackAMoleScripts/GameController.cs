@@ -7,7 +7,9 @@ public class GameController : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
     public float gameTimer = 30f;
-    public float initialTimer = 0f; 
+    public float easyInitialTimer = 40f;
+    public float normalInitialTimer = 30f;
+    public float hardInitialTimer = 25f; 
     public GameObject moleContainer;
     private Mole[] moles;
     public float showMoleTimer = 1.5f;
@@ -85,9 +87,25 @@ public class GameController : MonoBehaviour
     {
         if (gameTimer <= 0f)
         {
-            once = false;
-            gameTimer = initialTimer;
-            score = 0;
+
+            if (DifficultySelect.isEasy)
+            {
+                once = false;
+                gameTimer = easyInitialTimer;
+                score = 0;
+            }
+            if (DifficultySelect.isNormal)
+            {
+                once = false;
+                gameTimer = normalInitialTimer;
+                score = 0;
+            }
+            if (DifficultySelect.isHard)
+            {
+                once = false;
+                gameTimer = hardInitialTimer;
+                score = 0;
+            }
         }
         
     }

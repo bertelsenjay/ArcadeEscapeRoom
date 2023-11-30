@@ -1450,6 +1450,94 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165672053}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &196719537
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5829364557502285938, guid: c2d55234aeb19384686721efb6b29521,
+        type: 3}
+      propertyPath: m_Name
+      value: BrokenGlass
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829364557502285938, guid: c2d55234aeb19384686721efb6b29521,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606147895661777608, guid: c2d55234aeb19384686721efb6b29521,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606147895661777608, guid: c2d55234aeb19384686721efb6b29521,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606147895661777608, guid: c2d55234aeb19384686721efb6b29521,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606147895661777608, guid: c2d55234aeb19384686721efb6b29521,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.441
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606147895661777608, guid: c2d55234aeb19384686721efb6b29521,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.612
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606147895661777608, guid: c2d55234aeb19384686721efb6b29521,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.154
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606147895661777608, guid: c2d55234aeb19384686721efb6b29521,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7140947
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606147895661777608, guid: c2d55234aeb19384686721efb6b29521,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6997164
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606147895661777608, guid: c2d55234aeb19384686721efb6b29521,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.00065175886
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606147895661777608, guid: c2d55234aeb19384686721efb6b29521,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.021571659
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606147895661777608, guid: c2d55234aeb19384686721efb6b29521,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -87.855
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606147895661777608, guid: c2d55234aeb19384686721efb6b29521,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -56.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606147895661777608, guid: c2d55234aeb19384686721efb6b29521,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 57.945
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c2d55234aeb19384686721efb6b29521, type: 3}
 --- !u!1 &213435165
 GameObject:
   m_ObjectHideFlags: 0
@@ -2818,6 +2906,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 462241150}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &472483805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5829364557502285938, guid: c2d55234aeb19384686721efb6b29521,
+    type: 3}
+  m_PrefabInstance: {fileID: 196719537}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &484643990
 GameObject:
   m_ObjectHideFlags: 0
@@ -4127,12 +4221,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 68c7c6f0c2409d3459ad710b24b5c18b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.932
+      value: 0.621
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68c7c6f0c2409d3459ad710b24b5c18b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.094
+      value: -13.17
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68c7c6f0c2409d3459ad710b24b5c18b,
         type: 3}
@@ -4178,6 +4272,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: pane
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 68c7c6f0c2409d3459ad710b24b5c18b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4263,8 +4362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48f2acf5b98b54439c3cbb2051edc46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brokenObject: {fileID: 6606147895661777608, guid: c2d55234aeb19384686721efb6b29521,
-    type: 3}
+  brokenPane: {fileID: 472483805}
   velocityMagnitude: 5
 --- !u!1001 &596452597
 PrefabInstance:
@@ -5253,9 +5351,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 268110063}
   gameTimer: 0
-  initialTimer: 30
+  easyInitialTimer: 40
+  normalInitialTimer: 30
+  hardInitialTimer: 25
   moleContainer: {fileID: 586259522}
   showMoleTimer: 1.5
+  easyMoleTimer: 1.5
+  normalMoleTimer: 1.25
+  hardMoleTimer: 1
   scoreText: {fileID: 1665293354}
 --- !u!1 &750195512
 GameObject:
@@ -9312,7 +9415,9 @@ MonoBehaviour:
   score: 0
   timerText: {fileID: 1478036153}
   gameTimer: 0
-  initialGameTimer: 30
+  easyInitialGameTimer: 40
+  normalInitialGameTimer: 30
+  hardInitialGameTimer: 25
   scoreText: {fileID: 696522263}
 --- !u!4 &1204216828
 Transform:
@@ -16425,7 +16530,9 @@ MonoBehaviour:
   score: 0
   timerText: {fileID: 1430302502}
   gameTimer: 0
-  initialGameTimer: 30
+  easyInitialGameTimer: 40
+  normalInitialGameTimer: 30
+  hardInitialGameTimer: 25
   scoreText: {fileID: 2002865193}
 --- !u!4 &1978211176
 Transform:
@@ -17721,3 +17828,4 @@ SceneRoots:
   - {fileID: 1835870294}
   - {fileID: 2099062946}
   - {fileID: 1517156785}
+  - {fileID: 196719537}

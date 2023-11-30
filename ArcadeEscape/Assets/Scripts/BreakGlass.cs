@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class BreakGlass : MonoBehaviour
 {
-    public Transform brokenObject;
-    public float velocityMagnitude = 5f;
+    public GameObject brokenPane; 
+    //public float velocityMagnitude = 5f;
     //
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.relativeVelocity.magnitude > velocityMagnitude)
+        if (collision.gameObject.tag == "Hammer" || collision.gameObject.tag == "Bullet")
         {
-            Instantiate(brokenObject, transform.position, transform.rotation);
-            brokenObject.localScale = transform.localScale;
+            brokenPane.SetActive(true);
             Destroy(gameObject); 
         }
     }

@@ -8,7 +8,9 @@ public class BallGameManager : MonoBehaviour
     public int score;
     public TextMeshProUGUI timerText;
     public float gameTimer = 30f;
-    public float initialGameTimer = 30f;
+    public float easyInitialGameTimer = 40f;
+    public float normalInitialGameTimer = 30f;
+    public float hardInitialGameTimer = 25f; 
     public TextMeshProUGUI scoreText;
     public static bool tenSecondsLeft = false;
     private bool once = false;
@@ -54,9 +56,26 @@ public class BallGameManager : MonoBehaviour
     {
         if (gameTimer <= 0)
         {
-            once = false;
-            gameTimer = initialGameTimer;
-            score = 0;
+            if (DifficultySelect.isEasy)
+            {
+                once = false;
+                gameTimer = easyInitialGameTimer;
+                score = 0;
+            }
+            
+            if (DifficultySelect.isNormal)
+            {
+                once = false;
+                gameTimer = normalInitialGameTimer;
+                score = 0;
+            }
+
+            if (DifficultySelect.isHard)
+            {
+                once = false;
+                gameTimer = hardInitialGameTimer;
+                score = 0; 
+            }
         }
         
     }
