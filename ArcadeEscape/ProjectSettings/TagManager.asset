@@ -13,6 +13,7 @@ TagManager:
   - BallScoring
   - Weapon
   - CrowBar
+  - BallDestroy
   layers:
   - Default
   - TransparentFX
