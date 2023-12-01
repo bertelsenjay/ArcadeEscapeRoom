@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 public class PauseMenu : MonoBehaviour
 {
 
     public GameObject canvas;
-    public GameObject teleportRay; 
-    public bool isCanvasActive = true; 
+     
+    public bool isCanvasActive = true;
+    LocomotionSystem locomotionSystem; 
     // Start is called before the first frame update
     void Start()
     {
+        locomotionSystem = FindObjectOfType<LocomotionSystem>()
         DisplayUI();
     }
 
@@ -22,14 +25,14 @@ public class PauseMenu : MonoBehaviour
         if (isCanvasActive)
         {
             canvas.SetActive(false);
-            teleportRay.SetActive(false);
+            
             isCanvasActive = false;
             Time.timeScale = 1;
         }
         else if (!isCanvasActive)
         {
             canvas.SetActive(true);
-            teleportRay.SetActive(true);
+            
             isCanvasActive = true;
             Time.timeScale = 0; 
         }

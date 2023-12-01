@@ -10870,6 +10870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 629426220}
+  teleportRay: {fileID: 576903066}
   isCanvasActive: 1
 --- !u!1 &1368309650
 GameObject:
