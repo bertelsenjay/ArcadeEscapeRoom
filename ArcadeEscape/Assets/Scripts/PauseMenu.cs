@@ -63,7 +63,7 @@ public class PauseMenu : MonoBehaviour
 
     private IEnumerator ResetTeleportation()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
         teleportationProvider.enabled = true; 
     }
 }

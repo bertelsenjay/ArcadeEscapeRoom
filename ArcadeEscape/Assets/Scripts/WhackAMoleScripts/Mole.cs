@@ -10,6 +10,8 @@ public class Mole : MonoBehaviour
     public float speed = 4f;
     public float hideMoleTimer = 1.5f;
     public float timerLength = 1.5f;
+    public AudioClip onHitSound;
+    public float onHitSoundVolume = 1f; 
     CapsuleCollider capsuleCollider;
     // Start is called before the first frame update
 
@@ -65,6 +67,7 @@ public class Mole : MonoBehaviour
         if (collision.gameObject.tag == "Hammer")
         {
             //Destroy(gameObject);
+            GetComponent<AudioSource>().PlayOneShot(onHitSound, onHitSoundVolume);
             HideMole();
             GameController.score += 2;
             capsuleCollider.enabled = false;
