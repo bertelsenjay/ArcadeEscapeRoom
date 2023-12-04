@@ -34,8 +34,23 @@ public class Target : MonoBehaviour
     private IEnumerator ResetCollision()
     {
         yield return new WaitForSeconds(randomDelay);
-        randomDelay = Random.Range(lowestDelay, highestDelay);
-        meshRenderer.enabled = true;
-        boxCollider.enabled = true; 
+        if (DifficultySelect.isEasy)
+        {
+            randomDelay = Random.Range(lowestDelay * 1.2f, highestDelay * 1.2f);
+            meshRenderer.enabled = true;
+            boxCollider.enabled = true;
+        }
+        if (DifficultySelect.isNormal)
+        {
+            randomDelay = Random.Range(lowestDelay, highestDelay);
+            meshRenderer.enabled = true;
+            boxCollider.enabled = true;
+        }
+        if (DifficultySelect.isHard)
+        {
+            randomDelay = Random.Range(lowestDelay * 0.75f, highestDelay * 0.75f);
+            meshRenderer.enabled = true;
+            boxCollider.enabled = true;
+        }
     }
 }
