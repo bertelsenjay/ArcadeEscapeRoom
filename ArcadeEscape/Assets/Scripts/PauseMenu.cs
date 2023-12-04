@@ -28,7 +28,7 @@ public class PauseMenu : MonoBehaviour
         {
             canvas.SetActive(false);
             //locomotionSystem.enabled = true;
-            teleportationProvider.enabled = true;
+            StartCoroutine(ResetTeleportation());
             isCanvasActive = false;
             Time.timeScale = 1;
         }
@@ -59,5 +59,11 @@ public class PauseMenu : MonoBehaviour
         {
             DisplayUI();
         }
+    }
+
+    private IEnumerator ResetTeleportation()
+    {
+        yield return new WaitForSeconds(0.1f);
+        teleportationProvider.enabled = true; 
     }
 }
