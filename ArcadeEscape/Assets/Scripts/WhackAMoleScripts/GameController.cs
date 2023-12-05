@@ -76,6 +76,7 @@ public class GameController : MonoBehaviour
             if (once == false)
             {
                 once = true;
+                ObjectiveManager.hasPlayedWhackAMole = true;
                 ticketManager.EarnTickets(Mathf.RoundToInt(score / 2));
             }
         }

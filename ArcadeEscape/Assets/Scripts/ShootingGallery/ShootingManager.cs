@@ -37,6 +37,10 @@ public class ShootingManager : MonoBehaviour
             {
                 once = true;
                 ticketManager.EarnTickets(Mathf.RoundToInt(score / 2));
+                if (score > 0)
+                {
+                    ObjectiveManager.hasPlayerShooter = true;
+                }
             }
         }
         scoreText.text = "Score: " + score; 
