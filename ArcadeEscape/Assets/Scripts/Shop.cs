@@ -124,6 +124,7 @@ public class Shop : MonoBehaviour
                 TicketManager.tickets -= ticketsNeeded;
                 hasSection2BeenBought = true;
                 Destroy(section2Divider);
+                ObjectiveManager.hasPurchasedSectionTwo = true;
             }
         }
     }

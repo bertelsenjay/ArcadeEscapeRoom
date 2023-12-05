@@ -41,6 +41,11 @@ public class BallGameManager : MonoBehaviour
             {
                 once = true;
                 ticketManager.EarnTickets(Mathf.RoundToInt(score / 2)); 
+                if (score > 0)
+                {
+                    ObjectiveManager.hasPlayedBall = true;
+                }
+                
             }
         }
 
