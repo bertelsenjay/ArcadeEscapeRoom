@@ -19,7 +19,9 @@ public class GameController : MonoBehaviour
     public static int score = 0;
     public TextMeshProUGUI scoreText;
     TicketManager ticketManager;
-    private bool once = false; 
+    private bool once = false;
+    public Transform hammerSpawnPoint;
+    public GameObject hammer; 
     //public static bool isPlaying = false;
     // Start is called before the first frame update
     void Start()
@@ -78,6 +80,7 @@ public class GameController : MonoBehaviour
                 once = true;
                 
                 ticketManager.EarnTickets(Mathf.RoundToInt(score / 2));
+                //Destroy(hammer);
             }
         }
 
@@ -88,7 +91,7 @@ public class GameController : MonoBehaviour
     {
         if (gameTimer <= 0f)
         {
-
+            //Instantiate(hammer, hammerSpawnPoint.position, Quaternion.identity);
             if (DifficultySelect.isEasy)
             {
                 once = false;

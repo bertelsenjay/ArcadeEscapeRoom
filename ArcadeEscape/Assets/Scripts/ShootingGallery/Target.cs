@@ -11,6 +11,9 @@ public class Target : MonoBehaviour
     float randomDelay = 5f;
     TicketManager ticketManager;
     ShootingManager shootingManager;
+    AudioSource audioSource;
+    public AudioClip getHitSound;
+    public float getHitVolume = 1f; 
     private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
@@ -18,6 +21,7 @@ public class Target : MonoBehaviour
         randomDelay = Random.Range(lowestDelay, highestDelay);
         ticketManager = FindObjectOfType<TicketManager>();
         shootingManager = FindObjectOfType<ShootingManager>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -27,6 +31,7 @@ public class Target : MonoBehaviour
             meshRenderer.enabled = false;
             boxCollider.enabled = false;
             shootingManager.AddScore(1);
+            audioSource.PlayOneShot(getHitSound, getHitVolume);
             StartCoroutine(ResetCollision());
         }
     }
