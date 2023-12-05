@@ -20,12 +20,12 @@ public class Ball : MonoBehaviour
     {
         if (other.gameObject.tag == "BallScoring" && !BallGameManager.tenSecondsLeft && BallGameButton.isPlaying)
         {
-            gameManager.AddScore(2);
+            gameManager.AddScore(4);
             SetToStartingPosition();
         }
         else if (other.gameObject.tag == "BallScoring" &&  BallGameManager.tenSecondsLeft && BallGameButton.isPlaying)
         {
-            gameManager.AddScore(3);
+            gameManager.AddScore(6);
             SetToStartingPosition();
         }
     }
