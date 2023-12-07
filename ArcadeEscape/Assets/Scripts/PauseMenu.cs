@@ -8,16 +8,19 @@ public class PauseMenu : MonoBehaviour
 {
 
     public GameObject canvas;
-     
+    public GameObject confirmationCanvas; 
     public bool isCanvasActive = true;
     LocomotionSystem locomotionSystem; 
     TeleportationProvider teleportationProvider;
+    ActivateTPRay activateTPRay; 
     // Start is called before the first frame update
     void Start()
     {
         locomotionSystem = FindObjectOfType<LocomotionSystem>();
         teleportationProvider = FindObjectOfType<TeleportationProvider>();
+        //activateTPRay = FindObjectOfType<ActivateTPRay>();
         DisplayUI();
+        confirmationCanvas.SetActive(false); 
     }
 
     
@@ -29,6 +32,7 @@ public class PauseMenu : MonoBehaviour
             canvas.SetActive(false);
             //locomotionSystem.enabled = true;
             teleportationProvider.enabled = true;
+            //activateTPRay.enabled = true;
             isCanvasActive = false;
             Time.timeScale = 1;
         }
@@ -37,6 +41,7 @@ public class PauseMenu : MonoBehaviour
             canvas.SetActive(true);
             //locomotionSystem.enabled = false; 
             teleportationProvider.enabled = false;
+            //activateTPRay.enabled = false;
             isCanvasActive = true;
             Time.timeScale = 0; 
         }
@@ -46,6 +51,16 @@ public class PauseMenu : MonoBehaviour
     {
         if (context.performed)
             DisplayUI(); 
+    }
+
+    public void ShowConfirmation()
+    {
+        confirmationCanvas.SetActive(true);
+    }
+
+    public void DismissConfirmation()
+    {
+        confirmationCanvas.SetActive(false);
     }
 
     public void QuitGame()
