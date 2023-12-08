@@ -9034,10 +9034,13 @@ MonoBehaviour:
   hardInitialTimer: 25
   moleContainer: {fileID: 369941987}
   showMoleTimer: 1.5
-  easyMoleTimer: 1.5
-  normalMoleTimer: 1.25
-  hardMoleTimer: 1
+  easyMoleTimer: 1.25
+  normalMoleTimer: 1
+  hardMoleTimer: 0.75
   scoreText: {fileID: 713476735}
+  easyHighScore: 60
+  normalHighScore: 50
+  hardHighScore: 60
 --- !u!1001 &1069721811
 PrefabInstance:
   m_ObjectHideFlags: 0
