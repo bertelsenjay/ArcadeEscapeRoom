@@ -17,8 +17,9 @@ public class Shop : MonoBehaviour
     private bool hasCrowBarBeenBought = false;
     private bool hasSection2BeenBought = false; 
     LockManager lockManager;
-    public GameObject section2Divider; 
-
+    public GameObject section2Divider;
+    public GameObject crowBarObject;
+    public Transform crowBarSpawn; 
     private void Awake()
     {
         lockManager = FindObjectOfType<LockManager>();
@@ -28,7 +29,7 @@ public class Shop : MonoBehaviour
     {
         if (unlock && !hasUnlockBeenBought)
         {
-            priceText.text = "Door Lock: " + ticketsNeeded;
+            priceText.text = "Door Lock: " + ticketsNeeded + "\nUnlocks a single lock";
         }
         else if (unlock && hasUnlockBeenBought)
         {
@@ -36,7 +37,7 @@ public class Shop : MonoBehaviour
         }
         if (crowBar && !hasCrowBarBeenBought)
         {
-            priceText.text = "CrowBar: " + ticketsNeeded;
+            priceText.text = "CrowBar: " + ticketsNeeded + "\nMaybe you could open something?";
         }
         else if (crowBar && hasCrowBarBeenBought)
         {
@@ -44,7 +45,7 @@ public class Shop : MonoBehaviour
         }
         if (unlockSection2 && !hasSection2BeenBought)
         {
-            priceText.text = "Unlock Section 2: " + ticketsNeeded; 
+            priceText.text = "Unlock Section 2: " + ticketsNeeded +"\nUnlocks the rest of the arcade"; 
         }
         else if (unlockSection2 && hasSection2BeenBought)
         {
@@ -104,6 +105,7 @@ public class Shop : MonoBehaviour
 
     public void PurchaseCrowBar()
     {
+        Instantiate(crowBarObject, crowBarSpawn.position, Quaternion.identity);
         if (!hasCrowBarBeenBought)
         {
             if (TicketManager.tickets >= ticketsNeeded)
@@ -111,6 +113,7 @@ public class Shop : MonoBehaviour
                 TicketManager.tickets -= ticketsNeeded;
                 hasCrowBarBeenBought = true;
                 //Spawn Crowbar
+                Instantiate(crowBarObject, crowBarSpawn.position, Quaternion.identity);
             }
         }
 
