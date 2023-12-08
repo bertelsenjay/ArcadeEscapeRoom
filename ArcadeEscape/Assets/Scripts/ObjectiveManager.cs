@@ -15,7 +15,12 @@ public class ObjectiveManager : MonoBehaviour
     private bool moleOnce = false;
     private bool ticketOnce = false;
     private bool sectionTwoOnce = false; 
+    LockManager lockManager;
 
+    private void Start()
+    {
+        lockManager = FindObjectOfType<LockManager>();
+    }
     private void Update()
     {
         objectiveText.text = objectives[index];
@@ -43,6 +48,11 @@ public class ObjectiveManager : MonoBehaviour
         }
 
         if (hasPlayerShooter && index == 4)
+        {
+            IncrementIndex(); 
+        }
+
+        if (lockManager.GetLocksLeft() <= 0 && index == 5)
         {
             IncrementIndex(); 
         }
