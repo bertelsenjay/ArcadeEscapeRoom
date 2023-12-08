@@ -20,8 +20,8 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI scoreText;
     TicketManager ticketManager;
     private bool once = false;
-    public Transform hammerSpawnPoint;
-    public GameObject hammer; 
+    //public Transform hammerSpawnPoint;
+    //public GameObject hammer; 
     //public static bool isPlaying = false;
     // Start is called before the first frame update
     void Start()
@@ -74,7 +74,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            timerText.text = "Hit button with hammer to start ";
+            timerText.text = "Hit mole with hammer to start ";
             if (once == false)
             {
                 once = true;
