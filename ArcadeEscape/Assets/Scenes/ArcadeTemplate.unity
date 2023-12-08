@@ -1760,6 +1760,7 @@ MonoBehaviour:
   - Play Ball Game
   - Play Shooting Gallery
   - Find Hidden Keys
+  - Escape Through The Entrance!
   index: 0
   objectiveText: {fileID: 793288326}
 --- !u!43 &154531872
@@ -8505,6 +8506,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9fdd8105ef0ca2409322643aec80179,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

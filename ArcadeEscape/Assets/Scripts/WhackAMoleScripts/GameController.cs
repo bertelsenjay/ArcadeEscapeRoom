@@ -20,6 +20,11 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI scoreText;
     TicketManager ticketManager;
     private bool once = false;
+    public static bool hasBeatHighScore = false;
+    public float easyHighScore = 60f;
+    public float normalHighScore = 50f;
+    public float hardHighScore = 60f; 
+    LockManager lockManager;
     //public Transform hammerSpawnPoint;
     //public GameObject hammer; 
     //public static bool isPlaying = false;
@@ -28,6 +33,7 @@ public class GameController : MonoBehaviour
     {
         ticketManager = FindObjectOfType<TicketManager>();
         moles = moleContainer.GetComponentsInChildren<Mole>();
+        lockManager = FindObjectOfType<LockManager>();
         Debug.Log(moles.Length);
         score = 0;
         if (DifficultySelect.isEasy)
@@ -80,6 +86,21 @@ public class GameController : MonoBehaviour
                 once = true;
                 
                 ticketManager.EarnTickets(Mathf.RoundToInt(score / 2));
+                if (DifficultySelect.isEasy && score > easyHighScore && !hasBeatHighScore)
+                {
+                    hasBeatHighScore = true;
+                    lockManager.UnlockLock();
+                }
+                if (DifficultySelect.isNormal && score > normalHighScore && !hasBeatHighScore)
+                {
+                    hasBeatHighScore = true;
+                    lockManager.UnlockLock();
+                }
+                if (DifficultySelect.isHard && score >  hardHighScore && !hasBeatHighScore)
+                {
+                    hasBeatHighScore = true;
+                    lockManager.UnlockLock();   
+                }
                 //Destroy(hammer);
             }
         }
