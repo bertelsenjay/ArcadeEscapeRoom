@@ -13,7 +13,7 @@ public class BreakGlass : MonoBehaviour
     {
         if (collision.gameObject.tag == "Hammer" || collision.gameObject.tag == "Bullet")
         {
-            Instantiate(key, keyPosition.position, Quaternion.identity);
+            Instantiate(key, keyPosition.position, keyPosition.rotation);
             brokenPane.SetActive(true);
             Destroy(gameObject); 
         }
