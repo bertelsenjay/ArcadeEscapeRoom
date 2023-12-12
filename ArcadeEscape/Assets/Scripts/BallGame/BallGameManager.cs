@@ -15,9 +15,15 @@ public class BallGameManager : MonoBehaviour
     public static bool tenSecondsLeft = false;
     private bool once = false;
     TicketManager ticketManager;
+    public static bool hasBeatHighScore = false;
+    public float easyHighScore = 30;
+    public float normalHighScore = 40;
+    public float hardHighScore = 40; 
+    LockManager lockManager;
     private void Start()
     {
         ticketManager = FindObjectOfType<TicketManager>();
+        lockManager = FindObjectOfType<LockManager>();
         score = 0;
     }
 
@@ -45,6 +51,21 @@ public class BallGameManager : MonoBehaviour
             {
                 once = true;
                 ticketManager.EarnTickets(Mathf.RoundToInt(score / 2)); 
+                if (DifficultySelect.isEasy && score > easyHighScore && !hasBeatHighScore)
+                {
+                    hasBeatHighScore = true;
+                    lockManager.UnlockLock(); 
+                }
+                if (DifficultySelect.isNormal && score > normalHighScore && !hasBeatHighScore)
+                {
+                    hasBeatHighScore = true;
+                    lockManager.UnlockLock();
+                }
+                if (DifficultySelect.isHard && score > hardHighScore && !hasBeatHighScore)
+                {
+                    hasBeatHighScore = true;
+                    lockManager.UnlockLock();
+                }
                 if (score > 0)
                 {
                     ObjectiveManager.hasPlayedBall = true;

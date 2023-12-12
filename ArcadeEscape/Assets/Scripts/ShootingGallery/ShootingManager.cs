@@ -14,10 +14,16 @@ public class ShootingManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     private bool once = false;
     TicketManager ticketManager;
+    public static bool hasBeatHighScore = false;
+    public float easyHighScore = 30;
+    public float normalHighScore = 35;
+    public float hardHighScore = 40;
+    LockManager lockManager;
     // Start is called before the first frame update
     void Start()
     {
         ticketManager = FindObjectOfType<TicketManager>();
+        lockManager = FindObjectOfType<LockManager>();
         score = 0;
     }
 
@@ -37,6 +43,22 @@ public class ShootingManager : MonoBehaviour
             {
                 once = true;
                 ticketManager.EarnTickets(Mathf.RoundToInt(score / 2));
+
+                if (DifficultySelect.isEasy && score >  easyHighScore && !hasBeatHighScore)
+                {
+                    hasBeatHighScore = true;
+                    lockManager.UnlockLock();
+                }
+                if (DifficultySelect.isNormal && score > normalHighScore && !hasBeatHighScore)
+                {
+                    hasBeatHighScore = true;
+                    lockManager.UnlockLock();
+                }
+                if (DifficultySelect.isHard && score > hardHighScore && !hasBeatHighScore)
+                {
+                    hasBeatHighScore = true;
+                    lockManager.UnlockLock();
+                }
                 if (score > 0)
                 {
                     ObjectiveManager.hasPlayerShooter = true;
