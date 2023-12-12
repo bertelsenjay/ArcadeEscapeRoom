@@ -5,7 +5,7 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     MeshRenderer meshRenderer;
-    BoxCollider boxCollider;
+    CapsuleCollider capsuleCollider;
     public float lowestDelay = 5f;
     public float highestDelay = 10f; 
     float randomDelay = 5f;
@@ -17,7 +17,7 @@ public class Target : MonoBehaviour
     private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
-        boxCollider = GetComponent<BoxCollider>();
+        capsuleCollider = GetComponent<CapsuleCollider>();
         randomDelay = Random.Range(lowestDelay, highestDelay);
         ticketManager = FindObjectOfType<TicketManager>();
         shootingManager = FindObjectOfType<ShootingManager>();
@@ -26,10 +26,10 @@ public class Target : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.tag == "Bullet")
         {
             meshRenderer.enabled = false;
-            boxCollider.enabled = false;
+            capsuleCollider.enabled = false;
             shootingManager.AddScore(1);
             audioSource.PlayOneShot(getHitSound, getHitVolume);
             StartCoroutine(ResetCollision());
@@ -43,19 +43,19 @@ public class Target : MonoBehaviour
         {
             randomDelay = Random.Range(lowestDelay * 1.2f, highestDelay * 1.2f);
             meshRenderer.enabled = true;
-            boxCollider.enabled = true;
+            capsuleCollider.enabled = true;
         }
         if (DifficultySelect.isNormal)
         {
             randomDelay = Random.Range(lowestDelay, highestDelay);
             meshRenderer.enabled = true;
-            boxCollider.enabled = true;
+            capsuleCollider.enabled = true;
         }
         if (DifficultySelect.isHard)
         {
             randomDelay = Random.Range(lowestDelay * 0.75f, highestDelay * 0.75f);
             meshRenderer.enabled = true;
-            boxCollider.enabled = true;
+            capsuleCollider.enabled = true;
         }
     }
 }
