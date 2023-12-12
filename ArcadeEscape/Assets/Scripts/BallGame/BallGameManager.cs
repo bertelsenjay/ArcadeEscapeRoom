@@ -23,6 +23,10 @@ public class BallGameManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKey(KeyCode.D))
+        {
+            StartGame();
+        }
         if (gameTimer < 10f)
         {
             tenSecondsLeft = true;

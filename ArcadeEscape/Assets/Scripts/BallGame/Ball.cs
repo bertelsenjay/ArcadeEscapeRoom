@@ -18,14 +18,16 @@ public class Ball : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "BallScoring" && !BallGameManager.tenSecondsLeft && BallGameButton.isPlaying)
+        if (other.gameObject.tag == "BallScoring" && !BallGameManager.tenSecondsLeft)
         {
             gameManager.AddScore(4);
+            //Invoke("SetToStartingPosition", 1);
             SetToStartingPosition();
         }
-        else if (other.gameObject.tag == "BallScoring" &&  BallGameManager.tenSecondsLeft && BallGameButton.isPlaying)
+        else if (other.gameObject.tag == "BallScoring" &&  BallGameManager.tenSecondsLeft)
         {
             gameManager.AddScore(6);
+            //Invoke("SetToStartingPosition", 1);
             SetToStartingPosition();
         }
     }
