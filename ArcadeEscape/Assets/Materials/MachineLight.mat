@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: UVTEST
+  m_Name: MachineLight
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -79,6 +79,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.8301887, g: 0.46600214, b: 0.55084765, a: 1}
-    - _EmissionColor: {r: 1.5456988, g: 0, b: 0.093379386, a: 1}
+    - _Color: {r: 0.62444943, g: 0.7075472, b: 0.5773852, a: 1}
+    - _EmissionColor: {r: 0.61396843, g: 1, b: 0.3915094, a: 1}
   m_BuildTextureStacks: []
