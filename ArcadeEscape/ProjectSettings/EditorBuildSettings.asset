@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JacobSandbox.unity
     guid: 15fc95ae117cd414bb6a2ac70d2a98ca
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 1b6824edc1d214e4da50e55e952d3293
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
