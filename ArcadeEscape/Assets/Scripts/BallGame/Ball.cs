@@ -21,14 +21,14 @@ public class Ball : MonoBehaviour
         if (other.gameObject.tag == "BallScoring" && !BallGameManager.tenSecondsLeft)
         {
             gameManager.AddScore(4);
-            //Invoke("SetToStartingPosition", 1);
-            SetToStartingPosition();
+            Invoke("SetToStartingPosition", 1);
+            //SetToStartingPosition();
         }
         else if (other.gameObject.tag == "BallScoring" &&  BallGameManager.tenSecondsLeft)
         {
             gameManager.AddScore(6);
-            //Invoke("SetToStartingPosition", 1);
-            SetToStartingPosition();
+            Invoke("SetToStartingPosition", 1);
+            //SetToStartingPosition();
         }
     }
 
@@ -43,6 +43,7 @@ public class Ball : MonoBehaviour
     public void SetToStartingPosition()
     {
         transform.position = startingPosition;
-        rb.velocity = Vector3.zero; 
+        rb.velocity = Vector3.zero;
+        Debug.Log("Sent to starting position");
     }
 }

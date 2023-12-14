@@ -7,12 +7,21 @@ public class Key : MonoBehaviour
 {
     public TextMeshProUGUI popup;
     LockManager lockManager;
-
+    private bool once = false; 
     private void Awake()
     {
+        Destroy(gameObject, 5f);
         lockManager = FindObjectOfType<LockManager>();
         lockManager.UnlockLock();
         popup.text = "You found a key!\nThere are " + lockManager.GetLocksLeft() + " locks left. ";
-        Destroy(gameObject, 5f);
+        
+    }
+    private void Update()
+    {
+        if (!once)
+        {
+            once = true;
+            
+        }
     }
 }

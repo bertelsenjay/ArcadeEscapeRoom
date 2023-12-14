@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
+using TMPro; 
 public class PauseMenu : MonoBehaviour
 {
 
@@ -12,7 +13,9 @@ public class PauseMenu : MonoBehaviour
     public bool isCanvasActive = true;
     LocomotionSystem locomotionSystem; 
     TeleportationProvider teleportationProvider;
-    ActivateTPRay activateTPRay; 
+    ActivateTPRay activateTPRay;
+    public TextMeshProUGUI lockText;
+    LockManager lockManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +23,8 @@ public class PauseMenu : MonoBehaviour
         teleportationProvider = FindObjectOfType<TeleportationProvider>();
         //activateTPRay = FindObjectOfType<ActivateTPRay>();
         DisplayUI();
-        confirmationCanvas.SetActive(false); 
+        confirmationCanvas.SetActive(false);
+        lockManager = FindObjectOfType<LockManager>();
     }
 
     
@@ -43,7 +47,8 @@ public class PauseMenu : MonoBehaviour
             teleportationProvider.enabled = false;
             //activateTPRay.enabled = false;
             isCanvasActive = true;
-            Time.timeScale = 0; 
+            Time.timeScale = 0;
+            lockText.text = "Locks: " + lockManager.GetLocksLeft(); 
         }
     }
 
@@ -72,7 +77,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            DisplayUI();
+            //DisplayUI();
         }
     }
 

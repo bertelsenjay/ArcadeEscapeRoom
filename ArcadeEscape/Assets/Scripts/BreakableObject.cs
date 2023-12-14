@@ -9,7 +9,7 @@ public class BreakableObject : MonoBehaviour
     public Transform keySpawn; 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Bullet" || collision.gameObject.tag == "Hammer")
+        if (collision.gameObject.tag == "Bullet" || collision.gameObject.tag == "Hammer" || collision.gameObject.tag == "CrowBar")
         {
             health--; 
         }
@@ -19,7 +19,7 @@ public class BreakableObject : MonoBehaviour
     {
         if (health <= 0)
         {
-            Instantiate(key, keySpawn.position, Quaternion.identity);
+            Instantiate(key, keySpawn.position, keySpawn.rotation);
             Destroy(gameObject);
         }
         
