@@ -19,17 +19,22 @@ public class ShootingManager : MonoBehaviour
     public float normalHighScore = 35;
     public float hardHighScore = 40;
     LockManager lockManager;
+    public AudioClip finishSound;
+    AudioSource audioSource;
+    private bool audioOnce = false; 
     // Start is called before the first frame update
     void Start()
     {
         ticketManager = FindObjectOfType<TicketManager>();
         lockManager = FindObjectOfType<LockManager>();
+        audioSource = GetComponent<AudioSource>();
         score = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (gameTimer > 0f)
         {
             gameTimer -= Time.deltaTime;
@@ -43,7 +48,14 @@ public class ShootingManager : MonoBehaviour
             {
                 once = true;
                 ticketManager.EarnTickets(Mathf.RoundToInt(score / 2));
-
+                if (!audioOnce)
+                {
+                    audioOnce = true;
+                }
+                else
+                {
+                    audioSource.PlayOneShot(finishSound);
+                }
                 if (DifficultySelect.isEasy && score >  easyHighScore && !hasBeatHighScore)
                 {
                     hasBeatHighScore = true;

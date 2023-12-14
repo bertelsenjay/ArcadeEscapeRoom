@@ -25,6 +25,9 @@ public class GameController : MonoBehaviour
     public float normalHighScore = 50f;
     public float hardHighScore = 60f; 
     LockManager lockManager;
+    public AudioClip finishSound;
+    AudioSource audioSource;
+    private bool audioOnce = false; 
     //public Transform hammerSpawnPoint;
     //public GameObject hammer; 
     //public static bool isPlaying = false;
@@ -34,6 +37,7 @@ public class GameController : MonoBehaviour
         ticketManager = FindObjectOfType<TicketManager>();
         moles = moleContainer.GetComponentsInChildren<Mole>();
         lockManager = FindObjectOfType<LockManager>();
+        audioSource = GetComponent<AudioSource>();
         Debug.Log(moles.Length);
         score = 0;
         if (DifficultySelect.isEasy)
@@ -86,6 +90,14 @@ public class GameController : MonoBehaviour
                 once = true;
                 
                 ticketManager.EarnTickets(Mathf.RoundToInt(score / 2));
+                if (!audioOnce)
+                {
+                    audioOnce = true;
+                }
+                else
+                {
+                    audioSource.PlayOneShot(finishSound);
+                }
                 if (DifficultySelect.isEasy && score > easyHighScore && !hasBeatHighScore)
                 {
                     hasBeatHighScore = true;

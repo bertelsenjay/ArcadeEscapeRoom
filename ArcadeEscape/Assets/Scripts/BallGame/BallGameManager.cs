@@ -20,10 +20,14 @@ public class BallGameManager : MonoBehaviour
     public float normalHighScore = 40;
     public float hardHighScore = 40; 
     LockManager lockManager;
+    public AudioClip finishSound;
+    private bool audioOnce = false; 
+    AudioSource audioSource; 
     private void Start()
     {
         ticketManager = FindObjectOfType<TicketManager>();
         lockManager = FindObjectOfType<LockManager>();
+        audioSource = GetComponent<AudioSource>();
         score = 0;
     }
 
@@ -50,7 +54,16 @@ public class BallGameManager : MonoBehaviour
             if (once == false)
             {
                 once = true;
-                ticketManager.EarnTickets(Mathf.RoundToInt(score / 2)); 
+                ticketManager.EarnTickets(Mathf.RoundToInt(score / 2));
+                if (!audioOnce)
+                {
+                    audioOnce = true;
+                }
+                else
+                {
+                    audioSource.PlayOneShot(finishSound);
+                }
+                
                 if (DifficultySelect.isEasy && score > easyHighScore && !hasBeatHighScore)
                 {
                     hasBeatHighScore = true;
