@@ -26,7 +26,7 @@ public class DifficultySelect : MonoBehaviour
         isEasy = true;
         isNormal = false;
         isHard = false;
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("ArcadeTemplate");
     }
 
     public void SetNormal()
@@ -34,7 +34,7 @@ public class DifficultySelect : MonoBehaviour
         isEasy = false;
         isNormal = true;
         isHard = false;
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("ArcadeTemplate");
     }
 
     public void SetHard()
@@ -42,6 +42,6 @@ public class DifficultySelect : MonoBehaviour
         isEasy = false;
         isNormal = false;
         isHard = true; 
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("ArcadeTemplate");
     }
 }

@@ -26,7 +26,7 @@ public class FireBullet : MonoBehaviour
     public void SpawnBullet(ActivateEventArgs arg)
     {
         GameObject spawnedBullet = Instantiate(bullet);
-        audioSource.PlayOneShot(shootSound, 0.25f);
+        audioSource.PlayOneShot(shootSound, 0.5f);
         spawnedBullet.transform.position = spawnPoint.position;
         spawnedBullet.GetComponent<Rigidbody>().velocity = spawnPoint.forward * fireSpeed;
         Destroy(spawnedBullet, 5);

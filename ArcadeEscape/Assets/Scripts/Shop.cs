@@ -27,6 +27,7 @@ public class Shop : MonoBehaviour
 
     private void Update()
     {
+        
         if (unlock && !hasUnlockBeenBought)
         {
             priceText.text = "Door Lock: " + ticketsNeeded + "\nUnlocks a single lock";
