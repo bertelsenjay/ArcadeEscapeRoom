@@ -28,9 +28,11 @@ public class LockManager : MonoBehaviour
 
     private void Update()
     {
+        
         if (locksLeft <= 0)
         {
             Door.openDoor = true;
+            locksLeft = 0;
         }
     }
 
@@ -49,7 +51,7 @@ public class LockManager : MonoBehaviour
     {
         if (locksLeft <= 0)
         {
-            //SceneManager.LoadScene(5);
+            SceneManager.LoadScene("Credits");
         }
     }
 }
