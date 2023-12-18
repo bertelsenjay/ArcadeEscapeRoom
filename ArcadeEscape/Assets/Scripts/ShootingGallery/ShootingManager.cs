@@ -18,6 +18,8 @@ public class ShootingManager : MonoBehaviour
     public float easyHighScore = 30;
     public float normalHighScore = 35;
     public float hardHighScore = 40;
+    public float currentHighScore = 0f;
+    public TextMeshProUGUI highScoreText; 
     LockManager lockManager;
     public AudioClip finishSound;
     AudioSource audioSource;
@@ -29,12 +31,28 @@ public class ShootingManager : MonoBehaviour
         lockManager = FindObjectOfType<LockManager>();
         audioSource = GetComponent<AudioSource>();
         score = 0;
+        if (DifficultySelect.isEasy)
+        {
+            currentHighScore = easyHighScore;
+        }
+        if (DifficultySelect.isNormal)
+        {
+            currentHighScore = normalHighScore;
+        }
+        if (DifficultySelect.isHard) 
+        {
+            currentHighScore = hardHighScore;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        highScoreText.text = "High Score: " + currentHighScore;
+        if (score >= currentHighScore)
+        {
+            currentHighScore = score;
+        }
         if (gameTimer > 0f)
         {
             gameTimer -= Time.deltaTime;

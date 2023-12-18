@@ -123,7 +123,7 @@ public class Shop : MonoBehaviour
     {
         if (!hasSection2BeenBought)
         {
-            if (TicketManager.tickets > ticketsNeeded)
+            if (TicketManager.tickets >= ticketsNeeded)
             {
                 TicketManager.tickets -= ticketsNeeded;
                 hasSection2BeenBought = true;

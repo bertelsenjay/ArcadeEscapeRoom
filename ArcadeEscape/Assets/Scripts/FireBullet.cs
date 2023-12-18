@@ -20,13 +20,13 @@ public class FireBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
     public void SpawnBullet(ActivateEventArgs arg)
     {
         GameObject spawnedBullet = Instantiate(bullet);
-        audioSource.PlayOneShot(shootSound, 0.5f);
+        audioSource.PlayOneShot(shootSound, 5f);
         spawnedBullet.transform.position = spawnPoint.position;
         spawnedBullet.GetComponent<Rigidbody>().velocity = spawnPoint.forward * fireSpeed;
         Destroy(spawnedBullet, 5);
