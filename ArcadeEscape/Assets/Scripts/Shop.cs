@@ -30,7 +30,7 @@ public class Shop : MonoBehaviour
         
         if (unlock && !hasUnlockBeenBought)
         {
-            priceText.text = "Door Lock: " + ticketsNeeded + "\nUnlocks a single lock";
+            priceText.text = "Door Lock: " + ticketsNeeded;
         }
         else if (unlock && hasUnlockBeenBought)
         {
@@ -38,7 +38,7 @@ public class Shop : MonoBehaviour
         }
         if (crowBar && !hasCrowBarBeenBought)
         {
-            priceText.text = "CrowBar: " + ticketsNeeded + "\nMaybe you could open something?";
+            priceText.text = "CrowBar: " + ticketsNeeded;
         }
         else if (crowBar && hasCrowBarBeenBought)
         {
@@ -46,7 +46,7 @@ public class Shop : MonoBehaviour
         }
         if (unlockSection2 && !hasSection2BeenBought)
         {
-            priceText.text = "Unlock Section 2: " + ticketsNeeded +"\nUnlocks the rest of the arcade"; 
+            priceText.text = "Unlock Section 2: " + ticketsNeeded; 
         }
         else if (unlockSection2 && hasSection2BeenBought)
         {

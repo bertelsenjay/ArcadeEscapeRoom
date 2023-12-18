@@ -23,7 +23,9 @@ public class GameController : MonoBehaviour
     public static bool hasBeatHighScore = false;
     public float easyHighScore = 60f;
     public float normalHighScore = 50f;
-    public float hardHighScore = 60f; 
+    public float hardHighScore = 60f;
+    public float currentHighScore = 0f;
+    public TextMeshProUGUI highScoreText; 
     LockManager lockManager;
     public AudioClip finishSound;
     AudioSource audioSource;
@@ -43,14 +45,17 @@ public class GameController : MonoBehaviour
         if (DifficultySelect.isEasy)
         {
             showMoleTimer = easyMoleTimer;
+            currentHighScore = easyHighScore;
         }
         if (DifficultySelect.isNormal)
         {
             showMoleTimer = normalMoleTimer;
+            currentHighScore = normalHighScore;
         }
         if (DifficultySelect.isHard)
         {
             showMoleTimer = hardMoleTimer; 
+            currentHighScore = hardHighScore;
         }
 
     }
@@ -58,7 +63,11 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        highScoreText.text = "High Score: " + currentHighScore;
+        if (score >= currentHighScore)
+        {
+            currentHighScore = score;
+        }
         if (gameTimer > 0f)
         {
             gameTimer -= Time.deltaTime;

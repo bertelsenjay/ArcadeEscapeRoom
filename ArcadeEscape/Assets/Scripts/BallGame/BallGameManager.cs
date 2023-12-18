@@ -18,13 +18,27 @@ public class BallGameManager : MonoBehaviour
     public static bool hasBeatHighScore = false;
     public float easyHighScore = 30;
     public float normalHighScore = 40;
-    public float hardHighScore = 40; 
+    public float hardHighScore = 40;
+    public float currentHighScore = 0f;
+    public TextMeshProUGUI highScoreText; 
     LockManager lockManager;
     public AudioClip finishSound;
     private bool audioOnce = false; 
     AudioSource audioSource; 
     private void Start()
     {
+        if (DifficultySelect.isEasy)
+        {
+            currentHighScore = easyHighScore;
+        }
+        if (DifficultySelect.isNormal)
+        {
+            currentHighScore = normalHighScore;
+        }
+        if (DifficultySelect.isHard)
+        {
+            currentHighScore = hardHighScore;
+        }
         ticketManager = FindObjectOfType<TicketManager>();
         lockManager = FindObjectOfType<LockManager>();
         audioSource = GetComponent<AudioSource>();
@@ -33,6 +47,11 @@ public class BallGameManager : MonoBehaviour
 
     private void Update()
     {
+        highScoreText.text = "High Score: " + currentHighScore;
+        if (score >= currentHighScore)
+        {
+            currentHighScore = score; 
+        }
         if (Input.GetKey(KeyCode.D))
         {
             StartGame();
