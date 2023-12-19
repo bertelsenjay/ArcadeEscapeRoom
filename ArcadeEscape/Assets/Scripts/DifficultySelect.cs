@@ -26,6 +26,7 @@ public class DifficultySelect : MonoBehaviour
         isEasy = true;
         isNormal = false;
         isHard = false;
+        ResetStaticVariables();
         SceneManager.LoadScene("ArcadeTemplate");
     }
 
@@ -34,6 +35,7 @@ public class DifficultySelect : MonoBehaviour
         isEasy = false;
         isNormal = true;
         isHard = false;
+        ResetStaticVariables();
         SceneManager.LoadScene("ArcadeTemplate");
     }
 
@@ -41,7 +43,24 @@ public class DifficultySelect : MonoBehaviour
     {
         isEasy = false;
         isNormal = false;
-        isHard = true; 
+        isHard = true;
+        ResetStaticVariables();
         SceneManager.LoadScene("ArcadeTemplate");
+    }
+
+    public void ResetStaticVariables()
+    {
+        BallGameButton.isPlaying = false;
+        BallGameManager.tenSecondsLeft = false; 
+        BallGameManager.hasBeatHighScore = false;
+        ShootingManager.hasBeatHighScore = false;
+        GameController.score = 0;
+        GameController.hasBeatHighScore = false;
+        Door.openDoor = false;
+        ObjectiveManager.hasPlayedWhackAMole = false;
+        ObjectiveManager.hasPurchasedSectionTwo = false;
+        ObjectiveManager.hasPlayedBall = false;
+        ObjectiveManager.hasPlayerShooter = false;
+        TicketManager.tickets = 0;
     }
 }
