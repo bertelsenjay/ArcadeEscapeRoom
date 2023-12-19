@@ -12085,6 +12085,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 609255115}
     m_Modifications:
+    - target: {fileID: -9182575856355518394, guid: d4f4c52028faecb43b683cb0ee1bee3b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.048
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d4f4c52028faecb43b683cb0ee1bee3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12135,6 +12140,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6028728253787450086, guid: d4f4c52028faecb43b683cb0ee1bee3b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.377
+      objectReference: {fileID: 0}
+    - target: {fileID: -634345853091680509, guid: d4f4c52028faecb43b683cb0ee1bee3b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.214
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d4f4c52028faecb43b683cb0ee1bee3b,
         type: 3}
       propertyPath: m_Name
@@ -12158,6 +12173,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 322128872}
+    - targetCorrespondingSourceObject: {fileID: -8455728280606582528, guid: d4f4c52028faecb43b683cb0ee1bee3b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 919262923}
   m_SourcePrefab: {fileID: 100100000, guid: d4f4c52028faecb43b683cb0ee1bee3b, type: 3}
 --- !u!4 &657878466 stripped
 Transform:
@@ -17247,6 +17266,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 291003502}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &919262919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8455728280606582528, guid: d4f4c52028faecb43b683cb0ee1bee3b,
+    type: 3}
+  m_PrefabInstance: {fileID: 657878465}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &919262923
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919262919}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6851752233551798572, guid: d4f4c52028faecb43b683cb0ee1bee3b, type: 3}
 --- !u!1 &923578399
 GameObject:
   m_ObjectHideFlags: 0
@@ -19583,7 +19630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 546810516}
-  gameTimer: 30
+  gameTimer: 0
   easyInitialTimer: 40
   normalInitialTimer: 30
   hardInitialTimer: 25
@@ -20925,6 +20972,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: kanabo (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d7a819397e7144a41928a2f022696547,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -38659,7 +38711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priceText: {fileID: 533530356}
-  ticketsNeeded: 150
+  ticketsNeeded: 100
   unlock: 1
   crowBar: 0
   unlockSection2: 0
